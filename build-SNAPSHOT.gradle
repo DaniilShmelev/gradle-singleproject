@@ -1,15 +1,14 @@
 plugins {
 	id 'java'
-	id 'eclipse' // optional (to generate Eclipse project files)
-	id 'idea' // optional (to generate IntelliJ IDEA project files)
 }
 
 repositories {
 	mavenCentral()
+	maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
 
 dependencies {
-	testImplementation(platform('org.junit:junit-bom:5.7.1'))
+	testImplementation(platform('org.junit:junit-bom:5.8.0-SNAPSHOT'))
 	testImplementation('org.junit.jupiter:junit-jupiter')
 }
 
