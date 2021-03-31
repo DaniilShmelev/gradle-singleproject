@@ -1,0 +1,17 @@
+steps:
+- task: Gradle5x@2
+  inputs:
+    gradleWrapperFile: 'gradlew'
+    tasks: 'build'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    codeCoverageToolOption: 'JaCoCo'
+    codeCoverageClassFilesDirectories: 'build/classes/main/'
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: false
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: './'
+    ArtifactName: 'drop2'
+    publishLocation: 'Container'
